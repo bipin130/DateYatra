@@ -32,21 +32,21 @@ const planItems = [
 export default function Page() {
     return (
         <main className="min-h-screen overflow-x-hidden bg-[#fffafa] text-[#102a56]">
-            <div className="mx-auto w-full max-w-[1500px] px-5 py-7 sm:px-8 lg:px-10">
+            <div className="mx-auto w-full max-w-375 px-5 py-7 sm:px-8 lg:px-10">
 
                 <section className="grid items-center gap-8 px-2 sm:px-5 lg:grid-cols-[0.9fr_1.1fr] lg:gap-4 lg:px-7">
 
                     <div className="relative z-10">
                         <div className="flex items-start gap-6">
-                            <div className="hidden h-[115px] w-[115px] shrink-0 items-center justify-center rounded-[22px] bg-[#ffe8ed] sm:flex">
+                            <div className="hidden h-28.75 w-28.75 shrink-0 items-center justify-center rounded-[22px] bg-[#ffe8ed] sm:flex">
                                 <Clock3 size={62} strokeWidth={1.9} className="text-[#ff4169]" />
                             </div>
 
                             <div className="pt-1">
                                 <p className="text-[12px] font-bold uppercase tracking-[0.28em] text-[#ff4169] sm:text-[14px]">DateYatra Software</p>
                                 <h1 className="mt-2 text-[48px] font-extrabold leading-none tracking-[-2.5px] text-[#102a56] sm:text-[58px] lg:text-[64px]">Save Time</h1>
-                                <div className="mt-5 h-[3px] w-[54px] bg-[#ff4169]" />
-                                <p className="mt-5 max-w-[480px] text-[19px] font-medium leading-[1.5] text-[#60779e] sm:text-[21px]">
+                                <div className="mt-5 h-0.75 w-13.5 bg-[#ff4169]" />
+                                <p className="mt-5 max-w-120 text-[19px] font-medium leading-normal text-[#60779e] sm:text-[21px]">
                                     Plan your date faster and avoid unnecessary searching.
                                 </p>
                             </div>

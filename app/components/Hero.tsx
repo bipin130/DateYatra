@@ -56,12 +56,12 @@ export default function Hero() {
         <section className="relative min-h-screen overflow-hidden bg-[#fffaf7]">
             <div className="absolute inset-0">
                 <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-[#ffe4dc]/60 blur-3xl" />
-                <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-[#ffe9ee]/60 blur-3xl" />
+                <div className="absolute bottom-0 right-0 h-125 w-125 rounded-full bg-[#ffe9ee]/60 blur-3xl" />
                 <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#fff1df]/60 blur-3xl" />
             </div>
 
-            <div className="relative z-10 mx-auto grid min-h-screen max-w-[1450px] items-center gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-14 lg:py-12 xl:gap-16">
-                <div className="max-w-[610px]">
+            <div className="relative z-10 mx-auto grid min-h-screen max-w-362.5 items-center gap-10 px-5 py-20 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-14 lg:py-12 xl:gap-16">
+                <div className="max-w-152.5">
                     <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#f0d9d2] bg-white/80 px-3 py-1.5 shadow-sm backdrop-blur">
                         <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[#fff0ec] text-[#d45e54]">
                             <Sparkles size={13} />
@@ -76,7 +76,7 @@ export default function Hero() {
                             <span className="text-[27px] font-extrabold tracking-[-1.5px] text-[#263d36] sm:text-[32px]">
                                 Date
                             </span>
-                            <span className="bg-gradient-to-r from-[#df715d] via-[#d45d61] to-[#c9506a] bg-clip-text text-[27px] font-extrabold tracking-[-1.5px] text-transparent sm:text-[32px]">
+                            <span className="bg-linear-to-r from-[#df715d] via-[#d45d61] to-[#c9506a] bg-clip-text text-[27px] font-extrabold tracking-[-1.5px] text-transparent sm:text-[32px]">
                                 Yatra
                             </span>
                         </div>
@@ -85,14 +85,14 @@ export default function Hero() {
                         </p>
                     </div>
 
-                    <h1 className="max-w-[600px] text-[48px] font-semibold leading-[1.02] tracking-[-2.8px] text-[#273934] sm:text-[62px] lg:text-[68px]">
+                    <h1 className="max-w-150 text-[48px] font-semibold leading-[1.02] tracking-[-2.8px] text-[#273934] sm:text-[62px] lg:text-[68px]">
                         Your next date
-                        <span className="block bg-gradient-to-r from-[#cf6055] to-[#d76b72] bg-clip-text text-transparent">
+                        <span className="block bg-linear-to-r from-[#cf6055] to-[#d76b72] bg-clip-text text-transparent">
                             starts here.
                         </span>
                     </h1>
 
-                    <p className="mt-6 max-w-[520px] text-[15px] leading-7 text-[#756b66] sm:text-[16px]">
+                    <p className="mt-6 max-w-130 text-[15px] leading-7 text-[#756b66] sm:text-[16px]">
                         Discover places, choose food, book a room, send a gift,
                         and create a complete date plan without jumping between
                         different apps.
@@ -139,12 +139,12 @@ export default function Hero() {
                     </div>
                 </div>
 
-                <div className="relative mx-auto w-full max-w-[700px]">
+                <div className="relative mx-auto w-full max-w-175">
                     <div className="absolute -right-8 top-4 h-20 w-20 rounded-full bg-[#ffdcd5]/60 blur-2xl" />
                     <div className="absolute -bottom-8 left-10 h-28 w-28 rounded-full bg-[#ffe8c9]/70 blur-2xl" />
 
                     <div className="relative overflow-hidden rounded-[30px] border border-white/80 bg-white/60 p-2 shadow-[0_25px_80px_rgba(77,48,41,0.16)] backdrop-blur">
-                        <div className="relative h-[520px] overflow-hidden rounded-[24px] sm:h-[580px]">
+                        <div className="relative h-130 overflow-hidden rounded-3xl sm:h-145">
                             <Image
                                 src="/image/herobg.jpg"
                                 alt="Couple enjoying a romantic date"
@@ -154,7 +154,7 @@ export default function Hero() {
                                 className="object-cover object-center"
                             />
 
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#1e2925]/70 via-transparent to-[#1e2925]/5" />
+                            <div className="absolute inset-0 bg-linear-to-t from-[#1e2925]/70 via-transparent to-[#1e2925]/5" />
 
                             <div className="absolute left-5 top-5 rounded-2xl border border-white/40 bg-white/85 px-4 py-3 shadow-lg backdrop-blur-md">
                                 <div className="flex items-center gap-2">
@@ -190,19 +190,19 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    <div className="absolute -left-8 top-[17%] hidden w-[220px] lg:block">
+                    <div className="absolute -left-8 top-[17%] hidden w-55 lg:block">
                         <FeatureCard feature={features[0]} />
                     </div>
 
-                    <div className="absolute -right-8 top-[31%] hidden w-[220px] lg:block">
+                    <div className="absolute -right-8 top-[31%] hidden w-55 lg:block">
                         <FeatureCard feature={features[3]} />
                     </div>
 
-                    <div className="absolute -left-12 bottom-[22%] hidden w-[220px] lg:block">
+                    <div className="absolute -left-12 bottom-[22%] hidden w-55 lg:block">
                         <FeatureCard feature={features[5]} />
                     </div>
 
-                    <div className="absolute -right-10 bottom-[13%] hidden w-[220px] lg:block">
+                    <div className="absolute -right-10 bottom-[13%] hidden w-55 lg:block">
                         <FeatureCard feature={features[6]} />
                     </div>
                 </div>
@@ -218,6 +218,7 @@ export default function Hero() {
                             <p className="mt-0.5 text-[10px] text-[#978983]">
                                 Plan it all in one place
                             </p>
+
                         </div>
 
                         <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#fff0ec] text-[#d45e54]">
