@@ -52,30 +52,30 @@ export default function Page() {
                             </div>
                         </div>
 
-                        <p className="mt-8 max-w-[600px] text-[16px] leading-[1.78] text-[#50658a] sm:text-[18px]">
+                        <p className="mt-8 max-w-150 text-[16px] leading-[1.78] text-[#50658a] sm:text-[18px]">
                             DateYatra helps users save time by bringing the important parts of a date plan into one place. Users can quickly find a suitable restaurant, hotel, table, activity, or celebration option, select their preferred date and time, and make a booking without spending time searching through multiple platforms.
                         </p>
                     </div>
 
-                    <div className="relative h-[380px] sm:h-[450px] lg:h-[490px]">
-                        <div className="absolute left-[-35px] top-[55px] h-[170px] w-[180px] rounded-full bg-[#ffe4e9]" />
-                        <div className="absolute bottom-[20px] left-0 h-[150px] w-[260px] rounded-full bg-[#ffdce6]" />
-                        <div className="absolute right-[-25px] top-[30px] h-[160px] w-[230px] rounded-full bg-[#fff0df]" />
+                    <div className="relative h-95 sm:h-112.5 lg:h-122.5">
+                        <div className="absolute -left-8.75 top-13.75 h-42.5 w-45 rounded-full bg-[#ffe4e9]" />
+                        <div className="absolute bottom-5 left-0 h-37.5 w-65 rounded-full bg-[#ffdce6]" />
+                        <div className="absolute -right-6.25 top-7.5 h-40 w-57.5 rounded-full bg-[#fff0df]" />
 
                         <div className="absolute inset-0 overflow-hidden rounded-[46%_18%_19%_45%]">
                             <Image src="/image/save.jpg" alt="Couple sitting together at sunset" fill priority className="object-cover" sizes="(max-width: 768px) 100vw, 60vw" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#102a56]/10 via-transparent to-white/5" />
+                            <div className="absolute inset-0 bg-linear-to-t from-[#102a56]/10 via-transparent to-white/5" />
 
                             <div className="absolute left-[19%] top-[7%] rotate-[-5deg] text-center">
                                 <p className="font-serif text-[27px] italic leading-none text-[#102a56] sm:text-[32px]">Better Plans</p>
                                 <p className="mt-1 font-serif text-[27px] italic leading-none text-[#102a56] sm:text-[32px]">
                                     Happier Moments <span className="ml-2 text-[#ff4169]">♡</span>
                                 </p>
-                                <div className="mx-auto mt-3 h-[2px] w-[160px] rotate-[-7deg] bg-[#ff4169]" />
+                                <div className="mx-auto mt-3 h-0.5 w-40 rotate-[-7deg] bg-[#ff4169]" />
                             </div>
 
                             {/* Transparent Plan Card */}
-                            <div className="absolute right-[4%] top-[25%] w-[205px] rotate-[3deg] rounded-[18px] bg-white/35 p-3 shadow-[0_12px_30px_rgba(15,23,42,0.10)] backdrop-blur-[3px] sm:w-[245px] sm:p-4">
+                            <div className="absolute right-[4%] top-[25%] w-51.25 rotate-3 rounded-[18px] bg-white/35 p-3 shadow-[0_12px_30px_rgba(15,23,42,0.10)] backdrop-blur-[3px] sm:w-61.25 sm:p-4">
 
                                 <div className="flex items-center gap-3 px-1">
                                     <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/35">
@@ -120,18 +120,18 @@ export default function Page() {
                                 const Icon = item.icon;
 
                                 return (
-                                    <div key={item.title} className="min-h-[155px] rounded-[16px] bg-white p-5 shadow-[0_5px_18px_rgba(15,23,42,0.035)]">
-                                        <div className={`flex h-[60px] w-[60px] items-center justify-center rounded-full ${item.iconClass}`}>
+                                    <div key={item.title} className="min-h-38.75 rounded-2xl bg-white p-5 shadow-[0_5px_18px_rgba(15,23,42,0.035)]">
+                                        <div className={`flex h-15 w-15 items-center justify-center rounded-full ${item.iconClass}`}>
                                             <Icon size={28} strokeWidth={2.1} />
                                         </div>
-                                        <h3 className="mt-4 max-w-[225px] text-[16px] font-medium leading-[1.45] text-[#102a56] sm:text-[17px]">{item.title}</h3>
+                                        <h3 className="mt-4 max-w-56.25 text-[16px] font-medium leading-[1.45] text-[#102a56] sm:text-[17px]">{item.title}</h3>
                                     </div>
                                 );
                             })}
                         </div>
                     </div>
 
-                    <div className="relative overflow-hidden rounded-[23px] bg-gradient-to-br from-[#fff7f7] via-white to-[#fff0e8] p-6 sm:p-7">
+                    <div className="relative overflow-hidden rounded-[23px] bg-linear-to-br from-[#fff7f7] via-white to-[#fff0e8] p-6 sm:p-7">
                         <div className="flex items-center gap-4">
                             <p className="text-[12px] font-bold uppercase tracking-[0.15em] text-[#ff4169] sm:text-[13px]">Our Promise</p>
                             <div className="h-px flex-1 bg-[#ffc6ce]" />
@@ -144,7 +144,7 @@ export default function Page() {
                                 <Clock3 size={16} /> Card text
                             </div>
                             <h2 className="mt-1 text-[29px] font-extrabold tracking-[-1px] text-[#102a56]">Save Time</h2>
-                            <p className="mt-1 text-[15px] italic leading-[1.5] text-[#50658a] sm:text-[16px]">
+                            <p className="mt-1 text-[15px] italic leading-normal text-[#50658a] sm:text-[16px]">
                                 Find the right place, plan your date,<br />and save valuable time.
                             </p>
                         </div>
@@ -156,7 +156,7 @@ export default function Page() {
                                 <Clock3 size={16} /> Another way
                             </div>
                             <h2 className="mt-1 text-[29px] font-extrabold tracking-[-1px] text-[#102a56]">Save Time</h2>
-                            <p className="mt-1 max-w-[370px] text-[15px] leading-[1.55] text-[#50658a] sm:text-[16px]">
+                            <p className="mt-1 max-w-92.5 text-[15px] leading-[1.55] text-[#50658a] sm:text-[16px]">
                                 Plan your perfect date in one place—from finding a location to booking your table, room, and celebration.
                             </p>
                         </div>
@@ -164,7 +164,7 @@ export default function Page() {
                         <div className="relative z-10 mt-7 text-right">
                             <p className="font-serif text-[20px] italic leading-none text-[#ff4169]">Your Perfect Date</p>
                             <p className="mt-1 font-serif text-[20px] italic leading-none text-[#ff4169]">Starts Here! ♡</p>
-                            <div className="ml-auto mt-2 h-[2px] w-[125px] rotate-[-7deg] bg-[#ff4169]" />
+                            <div className="ml-auto mt-2 h-0.5 w-31.25 rotate-[-7deg] bg-[#ff4169]" />
                         </div>
 
                         <div className="pointer-events-none absolute -bottom-14 -right-8 text-[135px] leading-none text-[#ffdce3]">♥</div>
