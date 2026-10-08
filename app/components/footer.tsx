@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import React, { useState } from "react";
 import {
     ArrowUpRight,
     Globe,
@@ -10,6 +11,8 @@ import {
     MessageCircle,
     Phone,
     Sparkles,
+    Send,
+    Heart,
     type LucideIcon,
 } from "lucide-react";
 
@@ -18,8 +21,8 @@ import Logo from "@/public/image/logo.png";
 const quickLinks = [
     { label: "Home", href: "/" },
     { label: "Features", href: "/#features" },
-    { label: "Listed", href: "/listed" },
-    { label: "Contact", href: "/contact" },
+    { label: "Explore Places", href: "/listed" },
+    { label: "Contact Us", href: "/contact" },
 ];
 
 const supportLinks = [
@@ -36,49 +39,113 @@ const socials: { label: string; href: string; icon: LucideIcon }[] = [
 ];
 
 export default function Footer() {
-    return (
-        <footer className="relative border-t border-slate-200 bg-[#fff9fa] text-slate-700">
-            <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-rose-400 via-amber-400 to-emerald-400" />
+    const [email, setEmail] = React.useState("");
+    const [subscribed, setSubscribed] = useState(false);
 
-            <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-                <div className="grid gap-10 lg:grid-cols-[1.4fr_0.8fr_0.8fr_1.2fr]">
-                    <div>
+    const handleSubscribe = (e: React.FormEvent) => {
+        e.preventDefault();
+        if (email) {
+            setSubscribed(true);
+            setEmail("");
+            // Add your newsletter action / API call here
+        }
+    };
+
+    return (
+        <footer className="relative border-t border-slate-200/80 bg-[#fff9fa] text-slate-700 overflow-hidden">
+            {/* Top Multi-color Glow Line */}
+            <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-rose-500 via-amber-400 to-emerald-500" />
+
+            {/* Background Glow Accents */}
+            <div className="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-rose-100/50 blur-3xl" />
+            <div className="pointer-events-none absolute -right-20 top-10 h-72 w-72 rounded-full bg-amber-100/40 blur-3xl" />
+
+            <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8">
+
+                {/* TOP NEWSLETTER BANNER (Great for public SaaS conversion) */}
+                <div className="mb-14 rounded-3xl border border-rose-100 bg-gradient-to-r from-rose-50/60 via-white to-amber-50/40 p-6 sm:p-8 shadow-sm">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                        <div className="lg:col-span-7">
+                            <div className="inline-flex items-center gap-1.5 rounded-full bg-rose-100/70 px-3 py-1 text-xs font-semibold text-rose-600 mb-2">
+                                <Sparkles size={12} />
+                                Date Ideas & Updates
+                            </div>
+                            <h3 className="text-xl font-bold text-[#102A56] sm:text-2xl">
+                                Never miss a romantic spot in Kathmandu Valley
+                            </h3>
+                            <p className="mt-1 text-sm text-slate-500">
+                                Get curated date itineraries, restaurant openings, and special offers delivered to your inbox.
+                            </p>
+                        </div>
+
+                        <div className="lg:col-span-5">
+                            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2.5">
+                                <input
+                                    type="email"
+                                    required
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                    placeholder="Enter your email address"
+                                    className="flex-1 rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 placeholder-slate-400 shadow-sm focus:border-rose-500 focus:outline-none focus:ring-1 focus:ring-rose-500"
+                                />
+                                <button
+                                    type="submit"
+                                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#102A56] px-5 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#1b3b73]"
+                                >
+                                    <span>{subscribed ? "Subscribed!" : "Subscribe"}</span>
+                                    <Send size={15} />
+                                </button>
+                            </form>
+                            {subscribed && (
+                                <p className="mt-2 text-xs font-medium text-emerald-600 animate-fadeIn">
+                                    🎉 Thank you! You are on the VIP date list.
+                                </p>
+                            )}
+                        </div>
+                    </div>
+                </div>
+
+                {/* MAIN FOOTER NAVIGATION GRID */}
+                <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-8">
+
+                    {/* Brand Column */}
+                    <div className="lg:col-span-4 space-y-4">
                         <div className="flex items-center gap-3">
                             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white shadow-sm ring-1 ring-slate-200">
                                 <Image
                                     src={Logo}
-                                    alt="DateYatra"
-                                    width={40}
-                                    height={40}
+                                    alt="DateYatra Logo"
+                                    width={36}
+                                    height={36}
                                     priority
                                     className="object-contain"
                                 />
                             </div>
 
                             <div className="flex items-center whitespace-nowrap leading-none">
-                                <span className="text-[26px] font-extrabold tracking-[-1px] text-[#102A56]">
+                                <span className="text-[26px] font-extrabold tracking-tight text-[#102A56]">
                                     Date
                                 </span>
-                                <span className="bg-linear-to-r from-[#FF7A59] via-[#FF6B6B] to-[#FF4D6D] bg-clip-text text-[26px] font-extrabold tracking-[-1px] text-transparent">
+                                <span className="bg-gradient-to-r from-[#FF7A59] via-[#FF6B6B] to-[#FF4D6D] bg-clip-text text-[26px] font-extrabold tracking-tight text-transparent">
                                     Yatra
                                 </span>
                             </div>
                         </div>
 
-                        <p className="mt-5 max-w-sm text-sm leading-7 text-slate-600">
-                            DateYatra helps people plan memorable experiences, discover romantic spaces,
-                            and celebrate love with confidence, ease, and joy.
+                        <p className="text-sm leading-relaxed text-slate-600 max-w-sm">
+                            DateYatra helps couples plan memorable experiences, discover romantic spaces across Kathmandu, Lalitpur, and Bhaktapur, and celebrate love seamlessly.
                         </p>
 
-                        <div className="mt-6 flex flex-wrap items-center gap-3">
+                        {/* Social Icons */}
+                        <div className="flex items-center gap-3 pt-2">
                             {socials.map(({ label, href, icon: Icon }) => (
                                 <a
                                     key={label}
                                     href={href}
                                     target="_blank"
-                                    rel="noreferrer"
+                                    rel="noreferrer noopener"
                                     aria-label={label}
-                                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition hover:border-rose-200 hover:bg-rose-50 hover:text-rose-600"
+                                    className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition-all duration-300 hover:border-rose-300 hover:bg-rose-50 hover:text-rose-600 hover:-translate-y-0.5"
                                 >
                                     <Icon size={18} />
                                 </a>
@@ -86,14 +153,15 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    {/* Quick Links */}
+                    <div className="lg:col-span-2">
+                        <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
                             Quick Links
-                        </h3>
-                        <ul className="mt-5 space-y-3 text-sm text-slate-600">
+                        </h4>
+                        <ul className="mt-4 space-y-2.5 text-sm">
                             {quickLinks.map(({ label, href }) => (
                                 <li key={label}>
-                                    <Link href={href} className="transition hover:text-rose-600">
+                                    <Link href={href} className="text-slate-600 transition hover:text-rose-600 font-medium">
                                         {label}
                                     </Link>
                                 </li>
@@ -101,14 +169,15 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    {/* Support Links */}
+                    <div className="lg:col-span-2">
+                        <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
                             Support
-                        </h3>
-                        <ul className="mt-5 space-y-3 text-sm text-slate-600">
+                        </h4>
+                        <ul className="mt-4 space-y-2.5 text-sm">
                             {supportLinks.map(({ label, href }) => (
                                 <li key={label}>
-                                    <Link href={href} className="transition hover:text-rose-600">
+                                    <Link href={href} className="text-slate-600 transition hover:text-rose-600 font-medium">
                                         {label}
                                     </Link>
                                 </li>
@@ -116,46 +185,60 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                    <div>
-                        <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    {/* Contact Information */}
+                    <div className="lg:col-span-4 space-y-4">
+                        <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
                             Contact Us
-                        </h3>
+                        </h4>
 
-                        <div className="mt-5 space-y-4 text-sm text-slate-600">
-                            <a href="tel:+9779822683177" className="flex items-start gap-3 transition hover:text-rose-600">
-                                <Phone size={18} className="mt-0.5 shrink-0 text-rose-500" />
-                                <span>(+977) 9822683177</span>
+                        <div className="space-y-3 text-sm text-slate-600">
+                            <a href="tel:+9779822683177" className="flex items-center gap-3 transition hover:text-rose-600">
+                                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-rose-50 text-rose-500">
+                                    <Phone size={15} />
+                                </div>
+                                <span className="font-medium">(+977) 9822683177</span>
                             </a>
 
-                            <a href="mailto:dateyatra@gmail.com" className="flex items-start gap-3 transition hover:text-rose-600">
-                                <Mail size={18} className="mt-0.5 shrink-0 text-rose-500" />
-                                <span>dateyatra@gmail.com</span>
+                            <a href="mailto:dateyatra@gmail.com" className="flex items-center gap-3 transition hover:text-rose-600">
+                                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-rose-50 text-rose-500">
+                                    <Mail size={15} />
+                                </div>
+                                <span className="font-medium">dateyatra@gmail.com</span>
                             </a>
 
-                            <div className="flex items-start gap-3">
-                                <MapPin size={18} className="mt-0.5 shrink-0 text-rose-500" />
-                                <span>Bhaktapur, Nepal</span>
+                            <div className="flex items-center gap-3">
+                                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-rose-50 text-rose-500">
+                                    <MapPin size={15} />
+                                </div>
+                                <span className="font-medium">Bhaktapur, Nepal</span>
                             </div>
                         </div>
 
-                        <Link
-                            href="/contact"
-                            className="mt-6 inline-flex items-center gap-2 rounded-full bg-rose-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-rose-700"
-                        >
-                            Book a Call
-                            <ArrowUpRight size={16} />
-                        </Link>
+                        <div className="pt-1">
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center gap-2 rounded-xl bg-rose-600 px-4 py-2.5 text-xs font-semibold text-white shadow-md transition hover:bg-rose-700"
+                            >
+                                Book a Call / Inquiry
+                                <ArrowUpRight size={14} />
+                            </Link>
+                        </div>
                     </div>
+
                 </div>
 
-                <div className="mt-10 border-t border-slate-200 pt-6">
-                    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                        <p className="text-sm text-slate-500">© 2026 DateYatra. All rights reserved.</p>
-                        <p className="text-sm text-slate-500">
-                            Made with <span className="text-rose-500">❤</span> for memorable moments.
+                {/* BOTTOM COPYRIGHT & BRAND STATEMENT */}
+                <div className="mt-14 border-t border-slate-200/80 pt-6">
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                        <p className="text-xs text-slate-500 font-medium">
+                            © {new Date().getFullYear()} DateYatra. All rights reserved.
+                        </p>
+                        <p className="text-xs text-slate-500 flex items-center gap-1.5 font-medium">
+                            Made with <Heart size={13} className="text-rose-500 fill-current" /> for memorable moments in Nepal.
                         </p>
                     </div>
                 </div>
+
             </div>
         </footer>
     );
